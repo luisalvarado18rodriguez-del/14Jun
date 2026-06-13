@@ -1,0 +1,49 @@
+body{
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f7f3ea;
+    font-family:Arial,sans-serif;
+    text-align:center;
+}
+.container{padding:20px;}
+#gatito {
+    width: min(85vw, 400px);
+    cursor: pointer;
+
+      animation: respirar 3s ease-in-out infinite;
+
+    transition: transform 0.5s ease;
+}#gatito.despierto{
+    animation:cabeza 1.2s ease;
+}
+@keyframes cabeza{
+    0%{transform:rotate(0deg);}
+    25%{transform:rotate(-6deg);}
+    50%{transform:rotate(6deg);}
+    100%{transform:rotate(0deg);}
+}
+#mensaje{
+    opacity:0;
+    transition:opacity 2s ease;
+    margin-top:20px;
+}
+#mensaje.visible{opacity:1;}
+audio{margin-top:20px;}
+.hint{color:#666;}
+
+@keyframes respirar {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.02);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
